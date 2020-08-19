@@ -2,13 +2,14 @@ import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
+#Refer https://www.tutorialspoint.com/python/python_sending_email.htm
 
 def send_email(id):
     mail_content = "Your request with ID " + id + " is registered!"
     #The mail addresses and password
-    sender_address = 'ppawar@wilp.bits-pilani.ac.in'
-    sender_pass = 'Rishi1234'
-    receiver_address = 'pravin.pawar@pilani.bits-pilani.ac.in'
+    sender_address = <Update EMAIL ID here>
+    sender_pass = <Update EMAIL password here>
+    receiver_address = <Update EMAIL ID here>
 
     #Setup the MIME
     message = MIMEMultipart()
