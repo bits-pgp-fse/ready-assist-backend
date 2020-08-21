@@ -1,0 +1,49 @@
+install postman https://www.postman.com/downloads/
+install PostgreSQL 
+Create a PostgreSQL database test_db
+#create GIT repository in GITHub 
+git clone https://github.com/bits-pgp-fse/ready_assist_backend.git
+
+cd ready_assist_backend
+
+python -m venv env
+cd env\Scripts
+activate
+
+cd ..\..
+
+pip install django
+pip install djangorestframework
+pip install django-cors-headers
+pip install psycopg2
+
+#django-admin startproject backend 
+#cd backend 
+#django-admin startapp restapp
+#cd ..
+
+update backend/backend/settings.py file with db details 
+
+python manage.py makemigrations
+python manage.py migrate
+
+python manage.py runserver 8090
+
+Try following GET URL from postman
+http://localhost:8090/api/core/jobs
+Empty list should be shown
+
+Try following POST URL from postman with given body as JSON 
+http://localhost:8090/api/core/jobs
+{
+                 "cust_id":1,
+                  "service_id":1,
+                  "subservice_id":1, 
+                  "address":"ravet",
+                  "city_id":1,
+                  "start_date":"2020-08-12",
+                  "start_time":"03:00:00",
+                  "job_status":"Initiated"
+}
+
+Again use GET URL above, now should see one record returned
